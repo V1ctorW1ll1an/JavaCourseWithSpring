@@ -1,0 +1,10 @@
+1 - criar o projeto
+2 - iniciar o git
+3 - fazer o primeiro commit
+4 - começar as classes que não possuem dependecias
+  4.1 - atributos basicos
+  4.2 - associações
+  4.3 - construtores
+  4.4 - getters e setters
+  4.5 - hashCode e equals
+  4.6 - serializable
