@@ -3,7 +3,9 @@ package com.victor.course.resources;
 import java.util.List;
 
 import com.victor.course.entities.Category;
+import com.victor.course.entities.Product;
 import com.victor.course.services.CategoryService;
+import com.victor.course.services.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,24 +15,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/categories")
-public class CategoryResource {
+@RequestMapping(value = "/products")
+public class ProductResource {
 
   // userService dependency
   @Autowired
-  private CategoryService categoryService;
+  private ProductService productService;
 
   @GetMapping
-  public ResponseEntity<List<Category>> findALl() {
-    List<Category> categories = categoryService.findAll();
+  public ResponseEntity<List<Product>> findALl() {
+    List<Product> products = productService.findAll();
 
-    return ResponseEntity.ok().body(categories);
+    return ResponseEntity.ok().body(products);
   }
 
   @GetMapping(value = "/{id}")
-  public ResponseEntity<Category> findCategoryById(@PathVariable Long id) {
-    Category category = categoryService.findCategoryById(id);
+  public ResponseEntity<Product> findProductById(@PathVariable Long id) {
+    Product product = productService.findProductById(id);
 
-    return ResponseEntity.ok().body(category);
+    return ResponseEntity.ok().body(product);
   }
 }
